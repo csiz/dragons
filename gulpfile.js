@@ -9,6 +9,8 @@ var changed = require("gulp-changed");
 var sourcemaps = require("gulp-sourcemaps");
 var del = require("del");
 var nodemon = require("gulp-nodemon");
+var livereload = require("gulp-livereload");
+var browserify = require("gulp-browserify")
 
 // Paths to source files:
 
@@ -32,26 +34,32 @@ gulp.task("clean", () => {
 // Client build tasks:
 
 gulp.task("client-scripts", () => {
-    return gulp.src(paths.client.scripts)
+    return gulp.src(paths.client.scripts, {read: false})
         .pipe(changed("build/client/scripts/"))
-        .pipe(sourcemaps.init())
-            .pipe(coffee())
-            .pipe(uglify())
-            .pipe(concat("main.min.js"))
-        .pipe(sourcemaps.write())
+        .pipe(browserify({
+            transform: ["coffeeify"],
+            extensions: [".coffee"],
+            debug: true
+        }))
+        .pipe(concat("main.js"))
         .pipe(gulp.dest("build/client/scripts/"))
+        .pipe(livereload())
         ;
 });
 
 gulp.task("client-html", () => {
     return gulp.src(paths.client.html)
+        .pipe(changed("build/client/"))
         .pipe(gulp.dest("build/client/"))
+        .pipe(livereload())
         ;
 });
 
 gulp.task("client-style", () => {
     return gulp.src(paths.client.style)
+        .pipe(changed("build/client/styles/"))
         .pipe(gulp.dest("build/client/styles"))
+        .pipe(livereload())
         ;
 });
 
@@ -72,19 +80,20 @@ gulp.task("server", ["client"], () => {
         .pipe(changed("build/"))
         .pipe(sourcemaps.init())
             .pipe(coffee())
-            .pipe(uglify())
-            .pipe(concat("server.min.js"))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("build/"))
+        .pipe(livereload())
         ;
 });
 
 gulp.task("watch-server", ["server"], () => {
     gulp.watch(paths.server.scripts, ["server"]);
     nodemon({
-        script: "build/server.min.js",
+        script: "build/main.js",
         watch: "build/**/*"
     });
+    livereload.listen();
+
 });
 
 // Targets:
