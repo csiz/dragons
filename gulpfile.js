@@ -16,11 +16,11 @@ var browserify = require("gulp-browserify")
 
 var paths = {
     server: {
-        scripts: ["server/**/*.coffee"]
+        scripts: ["server/**/*.coffee", "common/**/*.coffee"]
     },
     client: {
         html: ["client/**/*.html"],
-        scripts: ["client/**/*.coffee"],
+        scripts: ["client/**/*.coffee", "common/**/*.coffee"],
         style: ["client/**/*.css"]
     }
 };
