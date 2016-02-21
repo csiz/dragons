@@ -6,7 +6,7 @@ d3 = require "d3"
 socket = io.connect()
 
 pings_pending = {}
-socket.on "mypong", (id) ->
+socket.on "ping response", (id) ->
     duration = (Date.now() - pings_pending[id])/2
     delete pings_pending[id]
     $("#latency").text(duration.toFixed(0))
@@ -16,7 +16,7 @@ ping_loop = setInterval(
     (() -> 
         id = Math.random().toString()
         pings_pending[id] = Date.now()
-        socket.emit "myping", id
+        socket.emit "get ping", id
     ),
     ping_frequency*1000)
 
@@ -65,7 +65,26 @@ draw_loop = setInterval(
 
 
 
+last_game = Date.now()/1000
+game_frequency = 5 # 1/60
+game_loop = setInterval(
+    (() -> 
+        new_game = Date.now()/1000
+        delta = new_game - last_game
+        game.step(delta)
+        last_game = new_game
+    ), 
+    1000*game_frequency)
 
+last_update = 0
+game_update = (state) ->
+    if state.time <= last_update then return false
+    last_update = state.time
+    current_time = game.state.time
+    game.set_state state
+    game.step(current_time - last_update)
+    true
+socket.on "state", (state) -> game_update(state)
 
 
 control = {
@@ -90,24 +109,27 @@ $(document).keyup (event) ->
         when 68 then control.right = false
         when 65 then control.left = false
 
-{success, player} = game.add_player "csiz"
 
-player.physical.motion 50, Math.PI/4
+to_actions = () -> 
+    actions = {
+        faster: control.up,
+        slower: control.down,
+        left: control.left,
+        right: control.right
+    }
 
-last_game = Date.now()/1000
-game_frequency = 1/60
-game_loop = setInterval(
-    (() -> 
-        new_game = Date.now()/1000
-        delta = last_game - new_game
+socket.emit "request join", "csiz"
 
-        switch
-            when control.up then player.physical.push delta, +10
-            when control.down then player.physical.push delta, -10
-            when control.left then player.physical.rotate delta, +Math.PI*2
-            when control.right then player.physical.rotate delta, -Math.PI*2
-        
-        game.step(last_game - new_game)
-        last_game = new_game
-    ), 
-    1000*game_frequency)
+socket.on "join response", ({id, isnew, state}) ->
+    game_update state
+
+    self_id = id
+
+    action_frequency = 1/30
+    action_loop = setInterval(
+        (() -> 
+            actions = to_actions()
+            socket.emit "action", actions
+            game.act_on self_id, actions
+        ), 
+        1000*action_frequency)
