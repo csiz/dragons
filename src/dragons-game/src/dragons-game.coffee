@@ -129,5 +129,7 @@ class Game
     act_on: (id, actions) ->
         @state.players[id].actions = actions
 
-exports.Game = Game
-exports.Player = Player
+exports = {
+    Game
+    Player
+}
