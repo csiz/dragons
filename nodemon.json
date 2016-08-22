@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "watch": [
+    "./build/server/**/*"
+  ],
+  "execMap": {
+    "es6": "node --harmony"
+  }
+}

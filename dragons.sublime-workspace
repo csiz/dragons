@@ -1,0 +1,558 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"orii",
+				"original_sum"
+			],
+			[
+				"w",
+				"weights"
+			],
+			[
+				"for_eac",
+				"for_each_impl    - [#void#]for_each_impl(<#Range &&range#>, <#Func &&func#>)"
+			],
+			[
+				"unpac",
+				"unpack_call         - [#int#]unpack_call(<#Func &&func#>, <#Tuple &&tuple#>)"
+			],
+			[
+				"unpacpa",
+				"unpack_call_helper  - [#int#]unpack_call_helper(<#Func &&func#>, <#Tuple &&tuple#>, <#seq<S...>#>)"
+			],
+			[
+				"unpack_",
+				"_detail_unpack_call - _detail_unpack_call"
+			],
+			[
+				"names",
+				"Pattern - namespace <#name#> = <#namespace#>"
+			],
+			[
+				"pl",
+				"players"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 1951,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 701,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++ advanced.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ advanced.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/Clang.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Clang.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C++ advanced.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/Clang.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Clang.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/Clang.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/VirtualenvPython.sublime-build",
+					""
+				],
+				[
+					"Packages/User/VirtualenvPython.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/User/VirtualenvPython.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/C++ advanced.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ advanced.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C++ advanced.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/Clang.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Clang.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/Clang.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 150.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/F/dragons/src/client.js",
+		"/D/Music/grooveback/done/22188545.txt",
+		"/C/Users/calin/Desktop/my thesis.txt",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/SublimeHaskell.sublime-settings",
+		"/D/Music/grooveback/22188787.txt",
+		"/D/Financial/student finance repayment.txt",
+		"/D/The Randomness/posts.txt",
+		"/F/neural/src/test_layer.py",
+		"/F/neural/test.bat",
+		"/F/neural/.gitignore",
+		"/F/neural/experiments/single_link.py",
+		"/F/neural/experiments/single_step.py",
+		"/F/neural/main.py",
+		"/F/neural/requirements.txt",
+		"/C/Users/calin/AppData/Local/Temp/7zOC8ED43B9/Python.sublime-build",
+		"/F/neural/virtualenv/Scripts/activate.bat",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/VirtualenvPython.sublime-build",
+		"/F/neural/virtualenv_python.bat",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Program Files/Sublime Text 3/Packages/Python.sublime-package",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/F/for_each/sample.cpp",
+		"/F/for_each/for_each.hpp",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/C++ advanced.sublime-build",
+		"/C/Users/calin/AppData/Local/Temp/7zOC2EA1FA8/C++ Single File.sublime-build",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/Clang.sublime-build",
+		"/C/Program Files/Sublime Text 3/Packages/C++.sublime-package",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/ClangAutoComplete/ClangAutoComplete.sublime-settings",
+		"/F/cpp testing/for_each.cpp",
+		"/F/iza programmin/.gitignore",
+		"/F/iza programmin/src/module.coffee",
+		"/F/iza programmin/package.json",
+		"/F/dragons/gulpfile.js",
+		"/F/iza programmin/gulpfile.js",
+		"/F/dragons/src/dragons-game/package.json",
+		"/F/dragons/src/dragons-game/gulpfile.js",
+		"/F/dragons/src/readme.md",
+		"/F/dragons/src/dragons-game/src/dragons-game.coffee",
+		"/F/dragons/.gitignore",
+		"/F/dragons/package.json",
+		"/F/dragons/server/main.coffee",
+		"/F/dragons/client/index.html",
+		"/F/dragons/common/game.coffee",
+		"/F/dragons/client/main.coffee",
+		"/F/dragons/build/main.js",
+		"/F/dragons/build/client/index.html",
+		"/F/dragons/build/client/scripts/main.js",
+		"/D/App Backups/popcorn_20151107 - Copy - Copy",
+		"/C/Users/calin/AppData/Local/Popcorn-Time-CE/data/watched.db",
+		"/F/dragons/client/main.css",
+		"/F/dragons/client/styles.css",
+		"/F/dragons/client/main.js",
+		"/F/dragons/build/server/main.min.js",
+		"/F/dragons/node_modules/gulp/package.json",
+		"/F/dragons/node_modules/lodash/package.json",
+		"/F/dragons/node_modules/lodash/dist/lodash.js",
+		"/F/dragons/dragons.sublime-project",
+		"/F/thirdparty/nodejs/node_modules/npm/npmrc",
+		"/C/Users/calin/Desktop/iza cv/hospital application.txt",
+		"/F/thirdparty/cmder/bin/alias.bat",
+		"/F/thirdparty/nodejs/npmrc",
+		"/F/thirdparty/cmder/config/user-startup.cmd",
+		"/F/thirdparty/cmder/config/Readme.md",
+		"/F/thirdparty/cmder/config/aliases",
+		"/C/Users/calin/Desktop/iza cv/.gitignore"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"random",
+			"nr_mid",
+			"nr_out",
+			"nr_in",
+			"_detail_call",
+			"index_sequence",
+			"make_index_sequence",
+			"_detail_for_each",
+			"_detail_unpack_call",
+			"_size",
+			"vector_pairs",
+			"vector_single",
+			"auto",
+			"v_single",
+			"v_pairs",
+			"v2",
+			"v1",
+			"unpack",
+			"_detail_unpack",
+			"wrap",
+			"width",
+			"line",
+			"player",
+			"actions",
+			"pi",
+			"update_frequency",
+			"dest.server",
+			"indent_",
+			"main",
+			"save"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								335
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								527,
+								527
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 243.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.haskell_error_panel":
+	{
+		"height": 268.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "dragons.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
