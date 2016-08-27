@@ -37,25 +37,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "gulpfile.js",
-			"settings":
-			{
-				"buffer_size": 1951,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 701,
-				"line_ending": "Unix"
-			}
-		}
-	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
 	[
@@ -251,11 +232,16 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-	],
 	"file_history":
 	[
+		"/F/dragons/src/server.es6",
+		"/F/dragons/.gitignore",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/F/dragons/nodemon.json",
+		"/C/Users/calin/AppData/Local/Temp/7zO49C37743/gulpfile.js",
+		"/F/dragons/.babelrc",
+		"/F/dragons/gulpfile.js",
 		"/F/dragons/src/client.js",
 		"/D/Music/grooveback/done/22188545.txt",
 		"/C/Users/calin/Desktop/my thesis.txt",
@@ -274,9 +260,7 @@
 		"/F/neural/virtualenv/Scripts/activate.bat",
 		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/VirtualenvPython.sublime-build",
 		"/F/neural/virtualenv_python.bat",
-		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Program Files/Sublime Text 3/Packages/Python.sublime-package",
-		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/F/for_each/sample.cpp",
 		"/F/for_each/for_each.hpp",
 		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/C++ advanced.sublime-build",
@@ -288,13 +272,11 @@
 		"/F/iza programmin/.gitignore",
 		"/F/iza programmin/src/module.coffee",
 		"/F/iza programmin/package.json",
-		"/F/dragons/gulpfile.js",
 		"/F/iza programmin/gulpfile.js",
 		"/F/dragons/src/dragons-game/package.json",
 		"/F/dragons/src/dragons-game/gulpfile.js",
 		"/F/dragons/src/readme.md",
 		"/F/dragons/src/dragons-game/src/dragons-game.coffee",
-		"/F/dragons/.gitignore",
 		"/F/dragons/package.json",
 		"/F/dragons/server/main.coffee",
 		"/F/dragons/client/index.html",
@@ -324,7 +306,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -338,6 +320,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"var (\\w+) = require\\(\"([-\\w]+)\"\\)",
 			"random",
 			"nr_mid",
 			"nr_out",
@@ -372,9 +355,10 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"import \\1 from \"\\2\""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -382,78 +366,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "gulpfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1951,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								335,
-								335
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								527,
-								527
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 27.0
@@ -509,10 +421,9 @@
 		"height": 124.0
 	},
 	"pinned_build_system": "Packages/Python/Python.sublime-build",
-	"project": "dragons.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -542,7 +453,6 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
 	"settings":
 	{
 	},

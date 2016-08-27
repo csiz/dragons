@@ -1,8 +1,11 @@
-import s from "socketio"
+import {version} from "./game"
 
-console.log("shit")
+import express from "express"
 
-f = () => "wut"
+let app = express()
 
-console.log(f())
-// import socketio from "socketio"
+app.use("/", express.static("build/client"))
+
+app.listen(3000, () => {
+  console.log("Started server!")
+})

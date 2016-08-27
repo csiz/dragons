@@ -19,7 +19,9 @@
     "cssify": "^1.0.3",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-file-cache": "0.0.1",
+    "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
@@ -29,6 +31,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "express": "^4.14.0",
     "lodash": "^4.13.1",
     "socketio": "^1.0.0"
   }
