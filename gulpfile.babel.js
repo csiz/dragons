@@ -15,6 +15,8 @@ import Cache from "gulp-file-cache"
 
 import livereload from "gulp-livereload"
 
+import _ from "underscore"
+
 let cache = new Cache()
 
 let onclientError = function(err) { 
@@ -72,23 +74,33 @@ gulp.task("client:pages", () => {
         .pipe(gulp.dest("./build/client/"))
 })
 
-gulp.task("build", ["client:scripts", "server:scripts", "client:pages"], () => {
+gulp.task("client:data", () => {
+    return gulp.src("./src/data/**/*")
+        .pipe(cache.filter())
+        .pipe(cache.cache())
+        .pipe(gulp.dest("./build/client/data/"))
+})
+
+gulp.task("client", ["client:scripts", "client:pages", "client:data"])
+
+gulp.task("build", ["client", "server:scripts"], () => {
 
 })
 
 gulp.task("watch", ["build"], () => {
     livereload.listen()
 
-    gulp.watch("./src/**/*", ["client:scripts", "server:scripts", "client:pages"]);
+    gulp.watch("./src/**/*", ["build"]);
 
     nodemon({
         script: "build/server/server.js",
-        watch: "build/server",
+        watch: "build",
+        delay: 2000,
     })
-        .on("restart", () => {
-            gutil.log("Calling livereload.")
-            livereload.reload()
-        })
+    .on("restart", _.debounce(() => {
+        gutil.log("Calling livereload.")
+        livereload.reload()
+    }, 1000))
 })
 
 gulp.task("default", ["watch"])

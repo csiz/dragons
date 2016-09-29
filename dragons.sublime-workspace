@@ -234,6 +234,14 @@
 	},
 	"file_history":
 	[
+		"/F/dragons/src/scripts/game/world.es6",
+		"/F/dragons/src/scripts/game/dragon.es6",
+		"/F/dragons/src/scripts/game/id.es6",
+		"/F/dragons/src/scripts/game/graphics.es6",
+		"/F/dragons/gulpfile.babel.js",
+		"/F/dragons/src/scripts/server.es6",
+		"/F/dragons/src/index.html",
+		"/F/dragons/build/client/index.html",
 		"/F/dragons/src/server.es6",
 		"/F/dragons/.gitignore",
 		"/C/Users/calin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -283,7 +291,6 @@
 		"/F/dragons/common/game.coffee",
 		"/F/dragons/client/main.coffee",
 		"/F/dragons/build/main.js",
-		"/F/dragons/build/client/index.html",
 		"/F/dragons/build/client/scripts/main.js",
 		"/D/App Backups/popcorn_20151107 - Copy - Copy",
 		"/C/Users/calin/AppData/Local/Popcorn-Time-CE/data/watched.db",
@@ -313,6 +320,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"F:\\dragons\\src"
 		]
 	},
 	"find_state":
@@ -320,6 +328,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"underscore",
+			"livereload",
 			"var (\\w+) = require\\(\"([-\\w]+)\"\\)",
 			"random",
 			"nr_mid",
@@ -358,6 +368,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"lodash",
 			"import \\1 from \"\\2\""
 		],
 		"reverse": false,
@@ -383,18 +394,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
