@@ -15,7 +15,7 @@ import Cache from "gulp-file-cache"
 
 import livereload from "gulp-livereload"
 
-import _ from "underscore"
+import _ from "lodash"
 
 let cache = new Cache()
 
