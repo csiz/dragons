@@ -84,7 +84,7 @@ gulp.task("client:pages", () => {
 })
 
 gulp.task("client:data", () => {
-    return gulp.src("./src/data/**/*")
+    return gulp.src("./src/data/**/*.{png}")
         .pipe(cache.filter())
         .pipe(cache.cache())
         .pipe(gulp.dest("./build/client/data/"))

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"p",
+				"port"
+			],
+			[
 				"orii",
 				"original_sum"
 			],
@@ -234,6 +238,13 @@
 	},
 	"file_history":
 	[
+		"/C/Users/calin/Desktop/work.txt",
+		"/C/Users/calin/Documents/GitHub/dragons/.gitignore",
+		"/C/Users/calin/Documents/GitHub/dragons/gulpfile.babel.js",
+		"/C/Users/calin/Documents/GitHub/dragons/package.json",
+		"/C/Users/calin/Documents/GitHub/dragons/src/scripts/server.es6",
+		"/C/Users/calin/Documents/GitHub/dragons/src/scripts/game/dragon.es6",
+		"/C/Users/calin/Documents/GitHub/dragons/src/scripts/game/id.es6",
 		"/F/dragons/src/scripts/game/world.es6",
 		"/F/dragons/src/scripts/game/dragon.es6",
 		"/F/dragons/src/scripts/game/id.es6",
@@ -313,13 +324,14 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 64.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"C:\\Users\\calin\\Documents\\GitHub\\dragons\\src\\scripts",
 			"F:\\dragons\\src"
 		]
 	},
@@ -328,6 +340,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cache",
 			"underscore",
 			"livereload",
 			"var (\\w+) = require\\(\"([-\\w]+)\"\\)",
@@ -379,11 +392,11 @@
 	},
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 39.0
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 55.0
 	},
 	"layout":
 	{
@@ -427,7 +440,7 @@
 	"pinned_build_system": "Packages/Python/Python.sublime-build",
 	"replace":
 	{
-		"height": 66.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -464,7 +477,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 397.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
