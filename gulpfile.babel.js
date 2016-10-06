@@ -9,6 +9,9 @@ import source from "vinyl-source-stream"
 import buffer from "vinyl-buffer"
 import del from "del"
 
+import mocha from "gulp-mocha"
+import should from "should"
+
 import nodemon from "gulp-nodemon"
 import babel from "gulp-babel"
 import Cache from "gulp-file-cache"
@@ -60,13 +63,19 @@ gulp.task("server:scripts", () => {
         .pipe(babel({
             sourceMaps: true,
             presets: ["es2015"],
-            sourceRoot: "./src/scripts/server.es6"
+            sourceRoot: "./src/scripts/"
         }))
         .on("error", onserverError)
         .pipe(cache.cache())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write(".sourcemaps"))
         .pipe(gulp.dest("./build/server/"))
+})
+
+gulp.task("server:tests", ["server:scripts"], () => {
+    return gulp.src("./build/server/**/*.test.js", {read: false})
+        .pipe(mocha({globals: should}))
+        .on("error", (err) => gutil.log(err))
 })
 
 gulp.task("client:pages", () => {
@@ -82,10 +91,9 @@ gulp.task("client:data", () => {
 })
 
 gulp.task("client", ["client:scripts", "client:pages", "client:data"])
-
-gulp.task("build", ["client", "server:scripts"], () => {
-
-})
+gulp.task("server", ["server:scripts", "server:tests"])
+gulp.task("tests", ["server:tests"])
+gulp.task("build", ["client", "server"])
 
 gulp.task("watch", ["build"], () => {
     livereload.listen()

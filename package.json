@@ -2,10 +2,13 @@
   "name": "dragons",
   "version": "0.2.0",
   "description": "A multiplayer game with dragons flying about.",
-  "main": "./build/server/server.es6",
   "scripts": {
     "start": "node --harmony ./build/server/server.es6",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csiz/dragons"
   },
   "author": "csiz",
   "license": "UNLICENSED",
@@ -22,10 +25,13 @@
     "gulp-babel": "^6.1.2",
     "gulp-file-cache": "0.0.1",
     "gulp-livereload": "^3.8.1",
+    "gulp-mocha": "^3.0.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
+    "mocha": "^3.1.0",
     "nodemon": "^1.10.2",
+    "should": "^11.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"

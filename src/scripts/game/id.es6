@@ -5,4 +5,4 @@ let getID = () => {
   return currentID
 }
 
-export {getID, currentID}
+export {getID}

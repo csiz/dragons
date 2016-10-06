@@ -1,56 +1,37 @@
+import _ from "lodash"
+
+let pi = Math.PI
+
 /** Vector that holds physics information. */
 class Vector {
-  constructor ({id, x, y, m=1, dx=0, dy=0, rm=1}) {
-    this.id = id
-    this.x = x
-    this.y = y
-    this.m = m
-    this.dx = dx
-    this.dy = dy
-    this.rm = rm
+  constructor ({x, y, r, v=0, m=1}) {
+    this.state = {x, y, r, v, m}
   }
 
-  place ({x, y, dx=this.dx, dy=this.dy}) {
-    this.x = x
-    this.y = y
-    this.dx = dx
-    thid.dy = dy
+  /** Place the object in the world. */
+  place ({x, y, r}) {
+    _.assign(this.state, {x, y, r})
+    return this
   }
 
-  push ({dx, dy}) {
-    this.dx += dx
-    this.dy += dy
+  /** Push this object by speed `dv` in direction `r`. */
+  push ({dv, r=this.state.r}) {
+    let dvx = dv * Math.cos(r)
+    let dvy = dv * Math.sin(r)
+    let vx = this.state.v * Math.cos(this.state.r)
+    let vy = this.state.v * Math.sin(this.state.r)
+    vx += dvx
+    vy += dvy
+    this.state.v = Math.sqrt(vx*vx + vy*vy)
+    this.state.r = Math.atan2(vy, vx)
+    return this
   }
 
-  impulse ({ix, iy}) {
-    this.dx += ix/m
-    this.dy += iy/m
-  }
-
-  accelerate ({ax, ay}, dt) {
-    this.dx += ax*dt
-    this.dy += ay*dt
-  }
-
-  step (dt) {
-    this.x += this.dx*dt
-    this.y += this.dy*dt
-  }
-
-  get state () {
-    return {
-      id: this.id,
-      x: this.x,
-      m: this.m,
-      dx: this.dx,
-      dy: this.dy,
-      rm: this.rm,
-    }
-  }
-
-  set state (state) {
-    this.constructor(state)
+  /** Rotate the object by `dr`. */
+  rotate ({dr}) {
+    this.state.r += dr
+    return this
   }
 }
 
-export {Vector}
+export {Vector, pi}
