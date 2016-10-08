@@ -1,4 +1,3 @@
-import {Vector} from "./physics"
 import {Dragon} from "./dragon"
 
 import _ from "lodash"
@@ -8,53 +7,18 @@ let time = function () {
   return (new Date()).getTime() / 1000
 }
 
-/** Physics world. */
-class PhysicsWorld {
-  constructor ({vectors=[]}) {
-    this.vectors = new Map(vectors)
-  }
-
-  add_vector (vector) {
-    this.vectors.set(vector.id, vector)
-  }
-
-  rm_vector (vector) {
-    this.vectors.delete(vector.id)
-  }
-
-  step (dt) {
-    for (let vec of this.vectors.values()) vec.step();
-  }
-
-  get state () {
-    return {
-      vectors: Array.from(this.vectors.entries()),
-    }
-  }
-
-  set state (state) {
-    throw "TODO: set the state for each vector."
-    // this.constructor(state)
-  }
-}
-
 /** Game world. */
 class World {
   constructor () {
-    this.physics = new PhysicsWorld()
+    this.time = 0.0
 
-    this.dragons = new Set()
-
-    this.time = time()
+    this.dragon = new Dragon({x: 0. y: 0, r: 0})
   }
 
-  add_dragon (dragon) {
-    this.dragons.add(dragon)
-    this.physics.add_vector(dragon.vector)
-  }
+  step (dt) {
+    this.dragon.step(dt)
 
-
-  step () {
+    this.time += dt
     // Update the physics world at a fixed resolution of 1000fps.
     while(true) {
       let dt = 1/1000;
@@ -63,6 +27,21 @@ class World {
       this.physics.step(dt)
     }
   }
+
+  /** Run the world loop at a fixed resolution. */
+  loop (resolution=100) {
+    let dt = 1.0/resolution
+    // Run the interval faster than the game loop, so skips aren't obvious.
+    let interval_dt = dt/10
+    let start = time()
+    let update = function(){
+      while (start+world.time < time()) world.step(dt)
+    }
+    return setInterval(update, interval_dt*1000)
+  }
+  
 }
 
-export {World, time}
+
+
+export {World}

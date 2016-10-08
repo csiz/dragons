@@ -35,13 +35,15 @@ class Graphics {
     this.stage.addChild(dragon)
 
     this.dragon = dragon
-
-    this.animationLoop = setInterval(() => this.animate(), 1/60)
   }
 
   animate () {
     this.renderer.render(this.stage)
     this.dragon.rotation += 0.01
+  }
+
+  loop(fps=60) {
+    return setInterval(() => this.animate(), 1/60)
   }
 }
 
