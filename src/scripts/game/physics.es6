@@ -5,32 +5,48 @@ let pi = Math.PI
 /** Vector that holds physics information. */
 class Vector {
   constructor ({x, y, r, v=0, m=1}) {
-    this.state = {x, y, r, v, m}
+    _.assign(this, {x, y, r, v, m})
+  }
+
+  get state () {
+    return _.pick(this, ["x", "y", "r", "v", "m"])
+  }
+
+  set state (state) {
+    _.assign(this, state)
   }
 
   /** Place the object in the world. */
   place ({x, y, r}) {
-    _.assign(this.state, {x, y, r})
-    return this
+    _.assign(this, {x, y, r})
   }
 
   /** Push this object by speed `dv` in direction `r`. */
-  push ({dv, r=this.state.r}) {
+  push ({dv, r=this.r}) {
     let dvx = dv * Math.cos(r)
     let dvy = dv * Math.sin(r)
-    let vx = this.state.v * Math.cos(this.state.r)
-    let vy = this.state.v * Math.sin(this.state.r)
+    let vx = this.v * Math.cos(this.r)
+    let vy = this.v * Math.sin(this.r)
+
     vx += dvx
     vy += dvy
-    this.state.v = Math.sqrt(vx*vx + vy*vy)
-    this.state.r = Math.atan2(vy, vx)
-    return this
+
+    this.v = Math.sqrt(vx*vx + vy*vy)
+    this.r = Math.atan2(vy, vx)
   }
 
   /** Rotate the object by `dr`. */
   rotate ({dr}) {
-    this.state.r += dr
-    return this
+    this.r += dr
+  }
+
+  /** Step through dt time. */
+  step (dt) {
+    let vx = this.v * Math.cos(this.r)
+    let vy = this.v * Math.sin(this.r)
+
+    this.x += vx * dt
+    this.y += vy * dt
   }
 }
 
