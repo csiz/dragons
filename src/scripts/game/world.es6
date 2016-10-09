@@ -3,7 +3,7 @@ import {Dragon} from "./dragon"
 import _ from "lodash"
 
 /** Get number of seconds since epoch. */
-let time = function () {
+function time () {
   return (new Date()).getTime() / 1000
 }
 

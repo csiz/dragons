@@ -1,50 +1,59 @@
 import PIXI from "pixi.js"
+import _ from "lodash"
 
+/** Load graphics resources. */
+function load_resources (oncomplete) {
+  let loader = new PIXI.loaders.Loader()
+  loader.add("dragon", "data/dragon.png")
+  
+  loader.once("complete", (loader, resources) => {
+    oncomplete(resources)
+  })
+
+  loader.load()
+}
+
+/** Get number of seconds since epoch. */
+function time () {
+  return (new Date()).getTime() / 1000
+}
+
+/** Draw the world on screen. */
 class Graphics {
-  constructor (renderer) {
+  constructor ({renderer, resources, world}) {
     this.renderer = renderer
-    this.resources = null
-    this.animationLoop = null
+    this.resources = resources
+    this.world = world
     this.stage = new PIXI.Container()
-
-    this.load()
+    this.fps = 0.0
   }
 
-  load () {
-    let loader = new PIXI.loaders.Loader()
-    loader.add("dragon", "data/dragon.png")
-    
+  draw () {
+    // TODO: make the stage agree with the world.
 
-    loader.once("complete", (loader, resources) => {
-      this.resources = resources
-      this.start()
-    })
-
-    loader.load()
-  }
-
-  start () {
-    let dragon = new PIXI.Sprite(this.resources.dragon.texture)
-
-    dragon.anchor.x = 0.5
-    dragon.anchor.y = 0.5
-
-    dragon.position.x = 200
-    dragon.position.y = 150
-
-    this.stage.addChild(dragon)
-
-    this.dragon = dragon
-  }
-
-  animate () {
     this.renderer.render(this.stage)
-    this.dragon.rotation += 0.01
   }
 
-  loop(fps=60) {
-    return setInterval(() => this.animate(), 1/60)
+  loop({fps=60}) {
+    // Let's do an exponential average to find out actual fps.
+    let last = time()
+    let sum_dt = 0.0
+    let count_dt = 0.0
+
+    function update () {
+      this.draw()
+
+      // Compute exp average fps.
+      let dt = time() - last
+      last += dt
+      let decay = Math.exp(dt/60)
+      sum_dt = sum_dt/decay + dt
+      count_dt = count_dt/decay + 1.0
+      this.fps = 1.0 / (sum_dt/count_dt)
+    }
+
+    return setInterval(update, 1.0/fps)
   }
 }
 
-export {Graphics}
+export {Graphics, load_resources}
